@@ -13,16 +13,16 @@ def timeToHack(array, preamble):
         number = array[index]
         
         if index <= (preamble - 1):
-            print("Still in the preamble numbers\n")
+            # print("Still in the preamble numbers\n")
             collection.append(number)
         
         else:
-            print("\nCurrent Collection", collection)
+            # print("\nCurrent Collection", collection)
             sumWindow = collection.copy()
             sumWindow.sort()
-            print("SumWindow", sumWindow)
+            # print("SumWindow", sumWindow)
             collectionLength = len(collection)
-            print("length", collectionLength)
+            # print("length", collectionLength)
             
             left = 0
             right = collectionLength - 1
@@ -30,14 +30,14 @@ def timeToHack(array, preamble):
             status = True
 
             while status == True:
-                print("\nwindow at Left", sumWindow[left])
-                print("window at Right", sumWindow[right])
+                # print("\nwindow at Left", sumWindow[left])
+                # print("window at Right", sumWindow[right])
                 currentSum = sumWindow[left] + sumWindow[right]
                 if currentSum == targetSum:
-                    print("Sum found for this number: ", number)
+                    # print("Sum found for this number: ", number)
                     break
                 elif left == right:
-                    print("The weakest link is the number: ", number)
+                    # print("The weakest link is the number: ", number)
                     status == False
                     weakLink.append(number)
                     break
@@ -48,7 +48,7 @@ def timeToHack(array, preamble):
             #adjustment of window
             collection.pop(0)
             collection.append(number)
-            print("\n\nNEW collection: ", collection)
+            # print("\n\nNEW collection: ", collection)
             print("THE WEAK LINK: ", weakLink)
 
 # timeToHack(sampleList, samplePreamble)
